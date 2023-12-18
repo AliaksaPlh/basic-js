@@ -14,21 +14,16 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function createDreamTeam(members) {
-  if (typeof members != "object" || members === null) {
+  if (!Array.isArray(members)) {
     return false;
   }
   let nameArr = [];
   members.forEach((item) => {
     if (typeof item === "string") {
-      nameArr.push(item.trim()[0]);
+      nameArr.push(item.trim()[0].toUpperCase());
     }
   });
-  // for (let item of members) {
-  //   if (typeof item === "string") {
-  //     nameArr.push(item.trim()[0]);
-  //   }
-  // }
-  let timName = nameArr.sort().join("").toUpperCase();
+  let timName = nameArr.sort().join("");
   if (timName.length > 0) {
     return timName;
   } else {

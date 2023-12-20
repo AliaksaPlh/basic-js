@@ -23,14 +23,6 @@ class DepthCalculator {
       }
     }
     return depth;
-    // let depth = 1;
-    // for (let i = 0; i < arr.length; i++) {
-    //   let arr[i] = element;
-    //   if (Array.isArray(element) == true) {
-    //     arr.flat();
-    //     depth++;
-    //   }
-    // }
   }
 }
 

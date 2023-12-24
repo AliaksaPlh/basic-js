@@ -12,15 +12,18 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function deleteDigit(n) {
-  let arr = n.toString().split("");
-  let arrSort = n.toString().split("").sort();
-  let result = [];
-  for (let i = 0; i <= arr.length; i++) {
-    if (arr[i] == arrSort[0]) {
-      arr.splice(i, 1);
-    }
+  let arr = n.toString().split(""); // ger arr from n
+  let resultsArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr.concat();
+    element.splice(i, 1);
+    resultsArr.push(+element.join(""));
   }
-  return +arr.join("");
+  resultsArr.sort(function (a, b) {
+    return a - b;
+  });
+  resultsArr.reverse();
+  return resultsArr[0];
 }
 
 module.exports = {

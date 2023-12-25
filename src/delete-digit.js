@@ -12,7 +12,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function deleteDigit(n) {
-  let arr = n.toString().split(""); // ger arr from n
+  let arr = n.toString().split(""); // ger arr from n by digits
   let resultsArr = [];
   for (let i = 0; i < arr.length; i++) {
     let element = arr.concat();
